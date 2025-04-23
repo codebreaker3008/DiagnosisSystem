@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Symptom-Based Diagnosis</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            background: linear-gradient(120deg, #d4fc79, #96e6a1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffffdd;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .input-field {
+            width: 90%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #8bc34a;
+            border-radius: 8px;
+            outline: none;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #388e3c;
+            color: white;
+            padding: 10px 25px;
+            font-size: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Symptoms</h2>
+        <form action="/predict_symptoms" method="POST">
+            <input type="text" name="symptoms" placeholder="e.g. fever, headache, cough" required class="input-field">
+            <br>
+            <button type="submit" class="btn">Diagnose</button>
+        </form>
+        <br>
+        <a href="/" class="btn">Go to Home</a>
+    </div>
+</body>
+</html>

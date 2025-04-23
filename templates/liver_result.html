@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liver Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            color: #34495e;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            text-decoration: none;
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #2471a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Liver Disease Prediction Result</h2>
+        <p>{{ result }}</p>
+        <a class="btn" href="/liver_form">Try Again</a>
+        <a class="btn" href="{{ url_for('home') }}">Go to Home</a>
+    </div>
+</body>
+</html>

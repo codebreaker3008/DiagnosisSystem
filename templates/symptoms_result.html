@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diagnosis Result</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            overflow-x: hidden;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #00796b;
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .result-box {
+            background-color: #f4fefe;
+            border: 2px solid #00acc1;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 15px;
+            color: #222;
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .result-text {
+            white-space: pre-wrap;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: #222;
+            overflow-x: hidden;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 15px 10px 0;
+            padding: 10px 20px;
+            background-color: #00796b;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #004d40;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 9px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Diagnosis Result</h2>
+        <p><strong>Entered Symptoms:</strong> {{ symptoms }}</p>
+        <div class="result-box">
+            <div class="result-text">{{ result | safe }}</div>
+        </div>
+        <a href="/symptoms" class="btn">Try Again</a>
+        <a href="/" class="btn">Go to Home</a>
+    </div>
+</body>
+</html>
